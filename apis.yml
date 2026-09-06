@@ -48,3 +48,5 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: department-of-justice
+x-relationship: division
