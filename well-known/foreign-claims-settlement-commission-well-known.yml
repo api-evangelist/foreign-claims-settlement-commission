@@ -1,0 +1,110 @@
+generated: '2026-09-10'
+method: probed
+source: >-
+  live anonymous HTTPS probes of every host this record knows. The Foreign Claims Settlement
+  Commission publishes no host of its own — it is a quasi-judicial agency inside the Department of
+  Justice and its entire public surface is a section of www.justice.gov (https://www.justice.gov/fcsc).
+  There is no apis[] entry, so there is no baseURL host and no OpenAPI servers[] host to probe.
+note: >-
+  Every named /.well-known/ path returned 404 on www.justice.gov. The apex justice.gov 301-redirects
+  every path to www, so it carries no independent surface. NO WellKnown and NO SecurityTxt pointer is
+  emitted in apis.yml, because not one path served a real document — this file records a measured
+  absence, not a presence. www.justice.gov answers most 404s with a full ~56KB Drupal error page; the
+  status recorded is the code the server actually returned, and no HTML error body was treated as a hit.
+hit_count: 0
+path_echo_control: passed
+hosts:
+- host: https://www.justice.gov
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog.json
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+  - path: /.well-known/ucp.json
+    status: 404
+    file: null
+  - path: /.well-known/acp.json
+    status: 404
+    file: null
+  - path: /.well-known/apis.json
+    status: 404
+    file: null
+  - path: /apis.json
+    status: 404
+    file: null
+  - path: /apis.yml
+    status: 403
+    file: null
+  - path: /.well-known/fcsc-negative-control-7f3ab91c.json
+    status: 404
+    file: null
+    control: negative
+- host: https://justice.gov
+  note: apex 301-redirects every path to https://www.justice.gov; no independent surface
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    file: null
+  - path: /.well-known/apis.json
+    status: 301
+    file: null
+  - path: /apis.json
+    status: 301
+    file: null
+  - path: /apis.yml
+    status: 301
+    file: null
+  - path: /.well-known/fcsc-negative-control-7f3ab91c.json
+    status: 301
+    file: null
+    control: negative

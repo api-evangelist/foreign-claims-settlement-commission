@@ -1,0 +1,62 @@
+# Foreign Claims Settlement Commission of the United States
+
+> The Foreign Claims Settlement Commission (FCSC) is a quasi-judicial, independent agency inside the
+> U.S. Department of Justice that adjudicates claims of U.S. nationals against foreign governments
+> under the International Claims Settlement Act (22 U.S.C. 1621 et seq.) and the War Claims Act
+> (50 U.S.C. 4101-4147). It publishes no API, no developer program and no machine-readable data
+> surface. Its public output is HTML pages and PDF documents on www.justice.gov: decisions ("Final
+> Opinions and Orders"), annual reports, and program descriptions.
+
+Generated 2026-09-10 by API Evangelist from apis.yml and the artifacts in this repository.
+Source of record: https://raw.githubusercontent.com/api-evangelist/foreign-claims-settlement-commission/refs/heads/main/apis.yml
+The FCSC serves no llms.txt of its own — https://www.justice.gov/llms.txt and
+https://www.justice.gov/fcsc/llms.txt both returned 404 on 2026-09-10.
+
+## APIs
+
+None. The FCSC operates no API, no developer portal and no SDK. Contract discovery on 2026-09-10
+probed www.justice.gov and justice.gov for /openapi.json, /swagger.json, /jsonapi, /api,
+/.well-known/agent-card.json, /.well-known/agent.json, /.well-known/api-catalog, /apis.json and the
+rest of the named well-known set; every path 404'd or 301'd to www. A negative-control path returned
+404, so the host is not a catch-all.
+
+The Department of Justice — the FCSC's parent department — does publish APIs (the DOJ News API at
+https://www.justice.gov/api/v1, the National FOIA Portal API, the BJS NCVS and NIBRS APIs, the FARA
+e-File registrant API and a DCAT-US data catalog). Those are DOJ's contracts, not the FCSC's, and
+they are profiled separately at
+https://raw.githubusercontent.com/api-evangelist/department-of-justice/refs/heads/main/apis.yml.
+The DOJ News API's `component` query parameter is ignored by the RSS surface — a request for
+`component=fcsc` returns the unfiltered department-wide feed byte-for-byte — so there is no
+FCSC-scoped machine-readable news feed either.
+
+## What the FCSC actually publishes
+
+- [FCSC home](https://www.justice.gov/fcsc): the agency's landing page (HTML).
+- [About the Commission](https://www.justice.gov/fcsc/about-commission): statutory basis, history,
+  and the record of 43 completed programs and 660,000+ adjudicated claims.
+- [Current Programs](https://www.justice.gov/fcsc/current-programs): the open Albania Claims Program
+  and the Helms-Burton / Claims Against Cuba Special Master role.
+- [Completed Programs](https://www.justice.gov/fcsc/completed-programs): the 43 closed country
+  programs (Germany, Iran, Cuba, China, Vietnam, Egypt, Panama, Albania and others).
+- [Final Opinions and Orders](https://www.justice.gov/fcsc/final-opinions-and-orders-5): decisions,
+  published as documents on the page rather than as a queryable dataset.
+- [Publications](https://www.justice.gov/fcsc/publications): annual reports, 2008 forward.
+- [FCSC and the Freedom of Information Act](https://www.justice.gov/fcsc/fcsc-freedom-information-act):
+  the FOIA route to Commission records.
+- [Contact the Commission](https://www.justice.gov/fcsc/contact-commission): info.fcsc@usdoj.gov.
+
+## Security and policy
+
+- [DOJ Vulnerability Disclosure Policy](https://www.justice.gov/jmd/vulnerability-disclosure-policy):
+  covers all DOJ-managed internet-accessible systems including www.justice.gov, and is linked from
+  the FCSC page footer. Reports go to Responsible_Disclosure@usdoj.gov or the DOJ VDP portal.
+- [DOJ Privacy Policy](https://www.justice.gov/doj/privacy-policy)
+- [DOJ Legal Policies and Disclaimers](https://www.justice.gov/legalpolicies)
+
+## API Evangelist artifacts in this repository
+
+- [Well-known probe](well-known/foreign-claims-settlement-commission-well-known.yml): a recorded
+  absence — every named /.well-known/ path 404s on www.justice.gov.
+- [Vulnerability disclosure](security/foreign-claims-settlement-commission-vulnerability-disclosure.yml)
+- [Domain security](security/foreign-claims-settlement-commission-domain-security.yml): TLS 1.3,
+  HSTS, DNSSEC, SPF and a DMARC p=reject on justice.gov; no CAA record.

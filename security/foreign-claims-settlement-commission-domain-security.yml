@@ -1,6 +1,10 @@
-generated: '2026-07-11'
+generated: '2026-09-10'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+note: >-
+  spf was re-verified by hand on 2026-09-10 after the probe's local resolver returned an empty TXT
+  set; justice.gov publishes "v=spf1 -all" (confirmed against 8.8.8.8, 1.1.1.1 and 9.9.9.9), so the
+  probe's spf:false was a resolver artifact and has been corrected. No CAA record is published.
 hosts:
 - host: www.justice.gov
   https: true

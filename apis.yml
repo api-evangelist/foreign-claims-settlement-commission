@@ -1,9 +1,16 @@
 aid: foreign-claims-settlement-commission
 name: Foreign Claims Settlement Commission
 description: >-
-  The Foreign Claims Settlement Commission of the United States (FCSC) is a
-  quasi-judicial, independent agency within the Department of Justice which
-  adjudicates claims of U.S. nationals against foreign governments.
+  The Foreign Claims Settlement Commission of the United States (FCSC) is a quasi-judicial,
+  independent agency within the U.S. Department of Justice that adjudicates claims of U.S. nationals
+  against foreign governments, under the International Claims Settlement Act (22 U.S.C. 1621 et seq.)
+  and the War Claims Act (50 U.S.C. 4101-4147). Established in 1954 from the War Claims Commission and
+  the International Claims Commission, it has run 43 completed country programs — Germany, Iran,
+  Yugoslavia, Hungary, the Soviet Union, Poland, Italy, Cuba, China, Vietnam, Egypt, Panama and
+  Albania among them — adjudicating more than 660,000 claims with awards in the billions of dollars.
+  The Albania program remains open and the Commission serves as Special Master in Helms-Burton claims
+  against Cuba. It publishes Final Opinions and Orders and annual reports on www.justice.gov, and
+  operates no API or developer program of its own.
 type: Index
 deliveryModel:
   model: unknown
@@ -30,12 +37,22 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/foreign-claims-settlement-commission.png
 access: 3rd-Party
 created: '2024-12-03'
-modified: '2026-04-28'
+modified: '2026-09-10'
 position: Consuming
 tags:
+  - Adjudication
+  - Claims
   - Federal-Government
+  - International Claims
+  - Justice
+  - Legal
 tags_raw:
+  - Adjudication
+  - Claims
   - Federal Government
+  - International Claims
+  - Justice
+  - Legal
 url: >-
   https://raw.githubusercontent.com/api-evangelist/foreign-claims-settlement-commission/refs/heads/main/apis.yml
 specificationVersion: '0.23'
@@ -45,8 +62,63 @@ common:
     url: security/foreign-claims-settlement-commission-domain-security.yml
   - type: Website
     url: https://www.justice.gov/fcsc
+  - type: LLMsTxt
+    url: llms/foreign-claims-settlement-commission-llms.txt
+  - type: VulnerabilityDisclosure
+    url: security/foreign-claims-settlement-commission-vulnerability-disclosure.yml
+  - type: Security
+    name: DOJ Vulnerability Disclosure Policy
+    url: https://www.justice.gov/jmd/vulnerability-disclosure-policy
+  - type: PrivacyPolicy
+    url: https://www.justice.gov/doj/privacy-policy
+  - type: TermsOfService
+    name: DOJ Legal Policies and Disclaimers
+    url: https://www.justice.gov/legalpolicies
+  - type: Contact
+    url: https://www.justice.gov/fcsc/contact-commission
+  - type: X-FinalOpinionsAndOrders
+    url: https://www.justice.gov/fcsc/final-opinions-and-orders-5
+  - type: X-Publications
+    url: https://www.justice.gov/fcsc/publications
+  - type: X-CurrentPrograms
+    url: https://www.justice.gov/fcsc/current-programs
+  - type: X-CompletedPrograms
+    url: https://www.justice.gov/fcsc/completed-programs
+  - type: X-FOIA
+    url: https://www.justice.gov/fcsc/fcsc-freedom-information-act
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 x-parent: department-of-justice
 x-relationship: division
+x-enrichment:
+  date: '2026-09-10'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    The FCSC is a quasi-judicial claims tribunal that runs no host of its own — its entire public
+    surface is a section of www.justice.gov, and contract discovery on 2026-09-10 turned up only HTML
+    pages and PDF decisions: /openapi.json, /swagger.json, /jsonapi and every named /.well-known/ path
+    404'd on www.justice.gov (a negative-control path 404'd too, so the host is not a catch-all), and
+    the parent department's DOJ News API ignores a component=fcsc filter, returning the unfiltered
+    department-wide feed byte-for-byte.
+  evidence:
+    - url: https://www.justice.gov/fcsc
+      status: 200
+    - url: https://www.justice.gov/openapi.json
+      status: 404
+    - url: https://www.justice.gov/jsonapi
+      status: 404
+    - url: https://www.justice.gov/.well-known/api-catalog
+      status: 404
+    - url: https://www.justice.gov/.well-known/agent-card.json
+      status: 404
+    - url: https://www.justice.gov/llms.txt
+      status: 404
+    - url: https://www.justice.gov/news/rss?type=press_release&component=fcsc
+      status: 200
+  checked: '2026-09-10'
