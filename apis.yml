@@ -42,7 +42,7 @@ position: Consuming
 tags:
   - Adjudication
   - Claims
-  - Federal-Government
+  - Federal Government
   - International Claims
   - Justice
   - Legal
@@ -53,6 +53,7 @@ tags_raw:
   - International Claims
   - Justice
   - Legal
+  - Federal-Government
 url: >-
   https://raw.githubusercontent.com/api-evangelist/foreign-claims-settlement-commission/refs/heads/main/apis.yml
 specificationVersion: '0.23'
